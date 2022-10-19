@@ -1,28 +1,43 @@
 //Global Variables
 int appWidth, appHeight;
-//
-//Declaring Display Geometry: landscape, square, portrait
-size(700 , 1000); //Able to deploy with fullScreen();
-appWidth = width;
-appHeight = height;
+void setup() {
+  
+  //Declaring Display Geometry: landscape, square, portrait
+  size(400 , 2000); //Able to deploy with fullScreen();
+  appWidth = width;
+  appHeight = height;
+  
+  
+  //Concatenation: , or + (i.e space)
+  println("\t\t\t Width="+width,"\t Height="+height);
+  println("Display Monitor:", "\t Width:"+displayWidth, "\t Height:"+displayHeight);
+  
+  
+  String ls ="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
+  if ( appWidth < appHeight) {//Declaring Ladscape and Square
+  println(instruct);
+} else {
+  println("Display: Good to go");
+  if ( appWidth > displayWidth ) {//Fitting CANVAS into monitor Display
+    appWidth=0;
+    appHeight=0;
+    println("Display: Stop, Program is broken");
+  } else {
+    //Empty Else
+  }
+}
 
 
-//Concatenation: , or + (i.e space)
-println("\t\t\t Width="+width,"\t Height="+height);
-println("Display Monitor:", "\t Width:"+displayWidth, "\t Height:"+displayHeight);
+} //End setup
 
 
-//Fitting CANVAS into Monitor Display
-if ( appHeight > displayHeight ) appHeight=0;
-if ( appWidth > displayWidth ) appWidth=0; //CANVAS-width will not fit
+void draw() {} //End draw
 
 
-//Outputting instructions to user when errors with above
-if ( appWidth==0 || appHeight==0 ) println("Stop, me is broke"); //OR = ||
-if ( appWidth!=0 && appHeight!=0 ) println("Display: Good to go"); //AND = &&
+void keyPressed() {} //End KeyPressed
 
-String ls ="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
-String orientation = ( appWidth >= appHeight) ? ls : p ;
-println(DO, orientation);
-if ( orientation == p ) print(instruct); //Later, output to CANVAS
-//
+
+void mousePressed() {} //End mousePressed
+
+
+// End Main Program
