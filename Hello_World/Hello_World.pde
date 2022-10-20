@@ -1,5 +1,5 @@
 //Global Variables
-int appWidth, appHeight;
+int appWidth, appHeight, squareXpos = 100/2, squareYpos = 100/2;
 void setup() {
   
   //Declaring Display Geometry: landscape, square, portrait
@@ -32,9 +32,16 @@ void setup() {
 
 
 void draw() {
-  ellipse(100, 100, 100, 100);
+  square( squareXpos, squareYpos, 100);
 } //End draw
 
+void keyTyped() {
+  if (key == 119) {squareYpos -= 10;}
+  if (key == 115) {squareYpos += 10;}
+  if (key == 100) {squareXpos += 10;}
+  if (key == 97) {squareXpos -= 10;}
+println("typed " + int(key) + " " + keyCode); 
+}
 
 void keyPressed() {} //End KeyPressed
 
