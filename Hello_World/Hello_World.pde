@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight, squareXpos = 700/2 - 50, squareYpos = 400/2 - 50;
+float centerX, centerY, xStart, yStart, widthRect, heightRect, center;
 void setup() {
   
   //Declaring Display Geometry: landscape, square, portrait
@@ -27,13 +28,24 @@ void setup() {
   }
 }
 
-
+  //Population
+  centerX = width * 1/2;
+  centerY = height * 1/2;
+  xStart = center - (width * 1/4);
+  yStart = center - (height * 1/4);
+  widthRect = width * 1/2;
+  heightRect = height * 1/2;
+  
 } //End setup
 
 
 void draw() {
   background (0);
-  square( squareXpos, squareYpos, 100);
+  square(squareXpos, squareYpos, 100);
+  if (squareYpos > height || squareYpos < -1 || squareXpos > width || squareXpos < -1) {
+  exit();
+  println ("You Ran Off The Map! Game Over");
+}
 } //End draw
 
 void keyTyped() {
@@ -50,6 +62,5 @@ void keyPressed() {} //End KeyPressed
 void mousePressed() {
   println ("Suqare Corner Position", "\t" +squareXpos, "\t" +squareYpos);
 } //End mousePressed
-
 
 // End Main Program
