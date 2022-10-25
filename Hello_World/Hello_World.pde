@@ -1,12 +1,12 @@
 //Global Variables
-int appWidth, appHeight, squareXpos = 100/2, squareYpos = 100/2;
+int appWidth, appHeight, squareXpos = 700/2 - 50, squareYpos = 400/2 - 50;
 void setup() {
   
   //Declaring Display Geometry: landscape, square, portrait
   size(700 , 400); //Able to deploy with fullScreen();
   appWidth = width;
   appHeight = height;
-  
+  background (0);
   
   //Concatenation: , or + (i.e space)
   println("\t\t\t Width="+width,"\t Height="+height);
@@ -32,21 +32,24 @@ void setup() {
 
 
 void draw() {
+  background (0);
   square( squareXpos, squareYpos, 100);
 } //End draw
 
 void keyTyped() {
-  if (key == 119) {squareYpos -= 10;}
-  if (key == 115) {squareYpos += 10;}
-  if (key == 100) {squareXpos += 10;}
-  if (key == 97) {squareXpos -= 10;}
-println("typed " + int(key) + " " + keyCode); 
+  if (key == 119) {squareYpos -= 50;}
+  if (key == 115) {squareYpos += 50;}
+  if (key == 100) {squareXpos += 50;}
+  if (key == 97) {squareXpos -= 50;}
+println("typed " + int(key) + " " + keyCode);
 }
 
 void keyPressed() {} //End KeyPressed
 
 
-void mousePressed() {} //End mousePressed
+void mousePressed() {
+  println ("Suqare Corner Position", "\t" +squareXpos, "\t" +squareYpos);
+} //End mousePressed
 
 
 // End Main Program
