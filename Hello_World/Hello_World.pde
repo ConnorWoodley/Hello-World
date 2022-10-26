@@ -32,21 +32,26 @@ void setup() {
 
 
 void draw() {
-  square( squareXpos, squareYpos, 100);
+  background (50,150,0);
+  fill (145,100,65);
+  square( squareXpos, squareYpos, 50);
 } //End draw
 
 void keyTyped() {
-  if (key == 119) {squareYpos -= 10;}
-  if (key == 115) {squareYpos += 10;}
-  if (key == 100) {squareXpos += 10;}
-  if (key == 97) {squareXpos -= 10;}
+  if (key == 119) {squareYpos -= 5;}
+  if (key == 115) {squareYpos += 5;}
+  if (key == 100) {squareXpos += 5;}
+  if (key == 97) {squareXpos -= 5;}
 println("typed " + int(key) + " " + keyCode); 
 }
 
 void keyPressed() {} //End KeyPressed
 
 
-void mousePressed() {} //End mousePressed
+void mousePressed() {
+  println ("The Corner Square placement is ", +squareXpos, "\t", +squareYpos);
+
+} //End mousePressed
 
 
 // End Main Program
